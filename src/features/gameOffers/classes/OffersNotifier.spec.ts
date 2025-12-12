@@ -145,7 +145,7 @@ describe('Features > GameOffers > Classes > OffersNotifier', () => {
 
       it('should send the message if channel is found and is GuildText.', async () => {
         await triggerRef.trigger!();
-        expect(channel.send).toHaveBeenCalledWith({ embeds: [expect.anything()], components: [expect.anything()] });
+        expect(channel.send).toHaveBeenCalledWith(expect.anything(), { embeds: [expect.anything()], components: [expect.anything()] });
       });
 
       it('should send the message if channel is found and is GuildAnnouncement.', async () => {
