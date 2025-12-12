@@ -67,8 +67,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         env:
-          GHCR_IMAGE: ghcr.io/discord-free-games-notifier-yasa
-          DOCKERHUB_IMAGE: yasathedogxx/discord-free-games-notifier-yasa
+          GHCR_IMAGE: ghcr.io/discord-free-games-notifier
+          DOCKERHUB_IMAGE: yasathedogxx/discord-free-games-notifier
         with:
           context: .
           push: true
