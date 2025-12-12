@@ -64,7 +64,13 @@ export class OffersNotifier {
       }
 
       const { component, embed } = offerToMessage(offer, t);
-      await channel.send({ embeds: [embed], components: [component] });
+      if (offer.storefront === 'Steam') {
+        // @ts-expect-error to skip the errors
+        await channel.send('<@1271383474326212699>', { embeds: [embed], components: [component] });
+      } else {
+        // @ts-expect-error to skip the errors
+        await channel.send('<@1271383287537074226>', { embeds: [embed], components: [component] });
+      }
     } catch (error) {
       logger.error(`Could not notify guild ${guild.name} about offer ${offer.title} on ${offer.storefront}.`);
       logger.error(error);
