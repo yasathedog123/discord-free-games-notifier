@@ -50,13 +50,13 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ inputs.ghcr_username }}
+          username: yasathedog123
           password: ${{ secrets.ghcr_token }}
 
       - name: Login to DockerHub Registry
         uses: docker/login-action@v3
         with:
-          username: ${{ inputs.dockerhub_username }}
+          username: yasathedogxx
           password: ${{ secrets.dockerhub_token }}
 
       - name: Get Version from package.json
@@ -67,8 +67,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3
         env:
-          GHCR_IMAGE: ghcr.io/${{ inputs.ghcr_image_name }}
-          DOCKERHUB_IMAGE: ${{ inputs.dockerhub_username }}/${{ inputs.image_name }}
+          GHCR_IMAGE: ghcr.io/discord-free-games-notifier-yasa
+          DOCKERHUB_IMAGE: yasathedogxx/discord-free-games-notifier-yasa
         with:
           context: .
           push: true
