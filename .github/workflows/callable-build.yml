@@ -16,13 +16,13 @@ on:
         required: true
         type: string
       dockerhub_username:
-        required: false
+        required: true
         type: string
     secrets:
       ghcr_token:
         required: true
       dockerhub_token:
-        required: false
+        required: true
 
 jobs:
   build:
