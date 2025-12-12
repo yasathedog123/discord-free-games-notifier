@@ -152,7 +152,7 @@ describe('Features > GameOffers > Classes > OffersNotifier', () => {
         Object.defineProperty(channel, 'type', { value: ChannelType.GuildAnnouncement });
 
         await triggerRef.trigger!();
-        expect(channel.send).toHaveBeenCalledWith({ embeds: [expect.anything()], components: [expect.anything()] });
+        expect(channel.send).toHaveBeenCalledWith(expect.anything(), { embeds: [expect.anything()], components: [expect.anything()] });
 
         Object.defineProperty(channel, 'type', { value: ChannelType.GuildText });
       });
