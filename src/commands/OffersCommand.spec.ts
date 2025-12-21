@@ -80,7 +80,7 @@ describe('Commands > OffersCommand', () => {
         );
 
       await command.run(interaction);
-      expect(interaction.followUp).toHaveBeenCalledWith({ embeds: [expectedEmbed], components: [expectedComponent] });
+      expect(interaction.followUp).toHaveBeenCalledWith({ content: expect.anything(), embeds: [expectedEmbed], components: [expectedComponent] });
     });
   });
 });
