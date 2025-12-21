@@ -32,7 +32,11 @@ export default class OffersCommand extends Command {
 
     for (const offer of offers) {
       const { embed, component } = offerToMessage(offer, t);
-      await interaction.followUp({ embeds: [embed], components: [component] });
+      if (offer.storefront === 'Steam') {
+        await interaction.followUp({ content: '<@&1271383474326212699>', embeds: [embed], components: [component] });
+      } else {
+        await interaction.followUp({ content: '<@&1271383287537074226>', embeds: [embed], components: [component] });
+      }
     }
   }
 }
