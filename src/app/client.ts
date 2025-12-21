@@ -6,6 +6,7 @@ import { DEBUG_ENABLED } from '../config/context';
 
 export const createClient = () => {
   const client = new ExtendedClient({
+    allowedMentions: { parse: ['users', 'roles'] },
     intents: [GatewayIntentBits.Guilds] as const
   });
 

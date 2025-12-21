@@ -33,6 +33,7 @@ describe('App > Client', () => {
       createClient();
 
       expect(ExtendedClient).toHaveBeenCalledWith({
+        allowedMentions: { parse: ['users', 'roles'] },
         intents: [GatewayIntentBits.Guilds]
       });
     });
